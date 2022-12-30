@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <section class= "page-container">
+        <nav class = "navbar">
+            <ul>
+              <li><a href="../index.html" class="nav-item"> Home </a></li>
+              <li><a href="./about.html" class="nav-item"> About </a></li>
+              <li><a href="./contact.html" class="nav-item"> Contact </a></li>
+            </ul>
+          </nav>
+
+          <div class= "page-wrapper">
+            <h1> Contact</h1>
+            
+
+            <div class="contact-card">
+
+              <form id="fs-frm" name="contact-form" accept-charset="utf-8" action="https://formspree.io/f/xlekrkdz" method="post">
+                <fieldset id="fs-frm-inputs">
+
+                  <label for="first-name" class="required">First Name </label>
+                    <input type="text" name="first-name" id="first-name" placeholder="First Name" required="">
+
+                  <label for="last-name" class="required">Last Name </label>
+                     <input type="text" name="last-name" id="last-name" placeholder="Last Name" required="">
+
+                  <label for="email-address" class="required">Email Address</label>
+                    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+
+                  <label for ="timetravel">If you could time travel would you choose to:</label>
+                  <select id="timetravel" name= "timetravel">
+                    <option selected> Select one ...</option>
+                  
+                    <option value= "past"> Travel back to the past</option>
+                    <option value= "future"> Travel to the future </option>
+                    <option value= "none"> Neither </option>
+                  </select>
+                  <label for="message">Message</label>
+                    <textarea rows="5" name="message" id="message" 	placeholder="Leave a little message and have a wonderful day!" required=""></textarea>
+                    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                    
+                </fieldset>
+                <button disabled class="frm-submit"  type="submit" id="frm-submit"> Submit </button>
+              </form>
+
+            
+
+            </div>
+          </div>
+
+    </section>
+
+    <footer>
+      
+        <nav class = "navbar-bottom">
+          <ul>
+            <li><a href="../index.html" class="nav-item-bottom"> Home </a></li>
+            <li><a href="./about.html" class="nav-item-bottom"> About </a></li>
+            <li><a href="./contact.html" class="nav-item-bottom"> Contact </a></li>
+          </ul>
+        </nav>
+        <div id="created"> </div>
+      </footer>
+
+
+      
+      <script src="../js/footer.js"></script>
+      <script src="../js/contact.js"></script>
+</body>
+</html>
