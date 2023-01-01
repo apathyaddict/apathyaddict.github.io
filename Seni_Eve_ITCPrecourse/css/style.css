@@ -163,7 +163,6 @@ h2{
   margin: 0 1rem;
   display: block;
   text-decoration: none;
-  /*this makes the entire box a link*/
   padding: 0.2rem;
 }
 
@@ -172,7 +171,6 @@ h2{
   display: inline-block;
   font-size:0.9rem;
   color:#464a5a;
-/* to figure outalign*/
   }
 
 .page-container {
@@ -196,6 +194,9 @@ p{
   margin-top:0.3rem;
   line-height:1.6rem;
 }
+
+
+
 
 /* this is in About document */
 
