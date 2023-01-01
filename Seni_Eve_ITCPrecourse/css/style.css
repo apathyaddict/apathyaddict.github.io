@@ -3,22 +3,18 @@
 }
 
 body {
-  /*background-image: linear-gradient(to Ttop, rgb(117, 132, 132), white);*/
   background-color: #f6f1e4;
   font-family: 'Open Sans', sans-serif;
   height: 100vh;
-  
   margin: 0;
   padding: 0;
 }
 
 .page-wrapper {
-  align-items: center;
   flex-direction: column;
   display: flex;
   justify-content: center;
   margin: 1rem;
-  
 }
 
 .card {
@@ -38,11 +34,6 @@ body {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   transition-duration: 0.3s;
   transition-property: box-shadow, transform;
-  
-  /*box-shadow: 0px 15px 20px -15px #111;
-  -webkit-box-shadow: 0 1px 12px 0 #777;
-	   -moz-box-shadow: 0 1px 12px 0 #777;
-	        box-shadow: 0 1px 12px 0 #777;*/
   /*BLUR EFFECT box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
 }
 
@@ -57,13 +48,14 @@ img{
 .navbar{
   position: fixed;
   top:0px;
-  border: dotted 0px blue;
+ 
   background-image: linear-gradient(to bottom right,#181D31, #464a5a);
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding:0.3rem;
+  
   
 }
 .navbar ul, .card ul, .navbar-bottom ul{
@@ -102,7 +94,7 @@ img{
 #icons{
  font-size: 2.5rem;
  margin: 0 1rem;
- border: 0px magenta solid;
+
  text-decoration: none;
  color:#181D31;
 }
@@ -154,7 +146,7 @@ transform: scale(1.1)
 h1{
 color: #181D31;
 font-weight: bold;
-font-size: 2.5rem;
+font-size: 2.3rem;
 
 margin-bottom:0;
 }
@@ -167,7 +159,7 @@ h2{
   color: #678983;
   
   margin-top: 0.3rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   
 }
 
@@ -220,22 +212,56 @@ p{
   font-size:0.9rem;
   padding: 0;
   margin-top:0.3rem;
+  line-height:1.6rem;
 }
 
 /* this is in About document */
 
+
+.cities{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+}
+
+.separation{
+  background-color: rgb(255, 255, 255, 0.5);
+  height: 75px;
+  width: 100%;
+  
+ margin: 0;
+ box-shadow: 0 10px 10px -15px rgba(0, 0, 0, 0.5);
+}
+
 h3{
  font-size: 1.5rem;
- color:#678983;
+ color:#464a5a;
  padding: 0;
  margin:0;
+ text-transform: uppercase;
+ 
  
 }
 
-em{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 3rem;
-  color: #181D31;
+h4{
+  font-size: 1.6rem;
+  color:#678983;
+  padding: 0;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+  
+}
+
+strong{
+ font-weight: bold;
+  color: #678983;
+  font-weight: bold;
 }
 
 .questions {
@@ -244,6 +270,9 @@ em{
  flex-flow: row;
  justify-content: center;
  padding:0;
+ 
+
+
 }
 
 .questions li {
@@ -255,48 +284,64 @@ em{
  flex-basis: 33%;
 }
 
-.quote{
-  background-color: transparent;
-  size: 20%;
-  float: left;
-  border: 1px solid green;
+.thumb{
+  border:grey 1px solid;
+  max-width: 50%;
+  height:auto;
+  filter: grayscale(100%);
+  display: block;
+  margin: 0 auto;
+}
+.thumb:hover{
+  filter: grayscale(0%);
+  transition: .2s ease-in;
 }
 
 .maps{
-  margin: 5rem 0;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
 
 .buttons{
-margin: 0 auto;
-padding: 0;
+  text-align: center;
+  margin: 0.5rem;
+  
 }
 
 .prev, .next{
-  padding:0.5rem;
- font-size: 2rem;
- display: inline-block;
  
+ display: inline-block;
+ outline: none;
+ cursor: pointer;
+ font-size: 14px;
+ line-height: 1;
+ border-radius: 500px;
+ transition-duration: .3s;
+ border: 1px solid transparent;
+ letter-spacing: 2px;
+ min-width: 140px;
+ text-transform: uppercase;
+ font-weight: 700;
+ color: #fff;
+ background-color: #464a5a;
+ height: 48px; 
+}
+ 
+.prev:hover, .next:hover{
+  background-color: #7eaca4;
 }
 
-/*
-.questions li:after  {
-	content: ' ';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 25px solid transparent;
-	border-top-color: #E6DDC4;
-	border-bottom: 0;
-	border-left: 0;
-	margin-left: -12.5px;
-	margin-bottom: -25px;
-}*/
-
-.cities{
-  border : 4px solid lime;
+.prev:disabled, .next:disabled{
+  cursor: not-allowed;
+  opacity:0.3;
 }
+
+
+
+
 
 /*contact page */
 
@@ -355,6 +400,7 @@ textarea:focus {
 #message {
   width: 100%;
 }
+
 
 
 .frm-submit{
