@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root,
+#root,
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f7f5ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid black */
+}
+
+h1 {
+  font-weight: 700;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+h2 {
+  font-family: 'Comfortaa', sans-serif;
+  letter-spacing: 0.06rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.06rem;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+a,
+.link-art-nav {
+  font-family: 'Comfortaa', sans-serif;
+  letter-spacing: 0.06rem;
+}
+
+button {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.no-copy-img {
+  pointer-events: none;
+}
+
+.imageEve {
+  width: 300px;
+  height: 300px;
+  /* margin: 0 auto; */
+  object-position: top;
+
+}
+
+
+
+/* .NavBarArt {
+  opacity: 0;
+  animation: slideOut 3s ease forwards;
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.NavBarArt.hidden {
+  display: none;
+} */
+
+.name-div {
+  border-bottom: 1px solid rgb(51 65 85);
+}
+
+.mainImage {
+
+  min-height: 100%;
+  max-height: 100%;
+}
+
+
+.portofolio {
+  font-weight: 400;
+  font-size: 8rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.carrousel-img {
+  width: 200px;
+  height: 250px;
+}
+
+.imageBanner {
+  max-height: 100%;
+  min-height: 90%;
+}
+
+.div-half {
+  align-items: center;
+  margin: 0 auto;
+  max-width: 50%;
+
+}
+
+.imageBargue {
+  height: 100%;
+  width: 50%;
+
+
+}
+
+.gridImages {
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+}
+
+.overlay:hover {
+  background-color: #636458;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* carrousel buttons */
+.slick-prev:before,
+.slick-next:before {
+  color: #636458;
+  size: 3rem;
+
+  font-size: 22px;
+
+}
+
+
+
+@media(max-width:991px) {
+  .portofolio {
+    font-size: 4rem;
+  }
+
+  .div-half {
+
+
+    max-width: 80%;
+
+  }
+
+  .name-div {
+    border-bottom: 0;
+  }
+
+  .portofolio {
+    visibility: hidden;
+  }
+
+  .imageBargue {
+    height: 50%;
+    width: 100%;
+
+
+  }
+
+}
+
+@media(max-width:480px) {
+  .div-half {
+    max-width: 100%;
+
+  }
+
+  .name-div {
+    border-bottom: 0;
+  }
+
+  .portofolio {
+    visibility: hidden;
+  }
+
+  .imageBargue {
+    height: 100%;
+    width: 100%;
+
+
+  }
+
+}

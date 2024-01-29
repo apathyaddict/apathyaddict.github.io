@@ -1,0 +1,17 @@
+.anim-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100px; */
+
+}
+
+.text-anim {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.h1-anim {
+
+    color: orangered;
+}

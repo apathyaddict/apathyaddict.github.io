@@ -1,0 +1,122 @@
+.galleryPainting {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    /* -webkit-column-width: 50%;
+    -moz-column-count: 50%;
+    column-width: 50%; */
+    /* padding: 0 12px; */
+}
+
+.galleryPainting .pics,
+.WatercolourGallery .pics {
+    transition: all 350ms ease;
+    -webkit-transition: all 350ms ease;
+    cursor: pointer;
+    /* margin: 0 0 15px 0; */
+}
+
+.galleryPainting .pics:hover,
+.WatercolourGallery .pics:hover {
+    filter: opacity(0.5)
+}
+
+
+.WatercolourGallery {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-width: 25%;
+    -moz-column-count: 25%;
+    column-width: 20%;
+
+}
+
+.WatercolourGallery .pics {}
+
+.WatercolourGallery .pics img {
+    /* height: 325px; */
+    /* width: 325px; */
+    /* aspect-ratio: 2/2; */
+    object-fit: cover;
+    object-position: center;
+}
+
+@media(max-width:991px) {
+    .galleryPainting {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+
+    }
+
+    .WatercolourGallery {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+
+    }
+}
+
+@media(max-width:480px) {
+
+    .galleryPainting,
+    .WatercolourGallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-count: 100%;
+        column-width: 100%;
+
+    }
+
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f5ee;
+    transition: opacity .2s ease, visibility .3s ease, transform .3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    overflow: hidden;
+    z-index: 999;
+
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal img {
+    width: auto;
+    max-width: 70%;
+    max-height: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+    padding: 20px 0 20px;
+    margin: 0 auto;
+}
+
+.modal.open svg {
+    position: fixed;
+    top: 10px;
+    right: 2px;
+    width: 4rem;
+    height: 4rem;
+    padding: 5px;
+    margin-right: 2rem;
+    color: #636458;
+    cursor: pointer;
+}
