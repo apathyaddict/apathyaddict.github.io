@@ -42,7 +42,7 @@ export const data = [
     image:
       "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/mxxnuu1cgn2i3rl5ihkr",
     github: "https://github.com/apathyaddict/evesenicom",
-    live: "www.eveseni.com/art",
+    live: "http://www.eveseni.com/art",
   },
   {
     id: 6,

@@ -25,10 +25,25 @@ export const paintings = [
   },
   {
     id: 6,
+    name: "Study of Bernini Statue",
+    note: "Taken with an iPhone. Does not reflect proper quality.",
+    image:
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/paintings/vncwpantgbmxpfzutmoq",
+  },
+  {
+    id: 10,
+    name: "Cleopatra",
+    note: "Taken with an iPhone. Does not reflect proper quality.",
+    image:
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/paintings/atazbvoguyxmumihmz58",
+  },
+  {
+    id: 15,
     name: "Study of De la Tour",
     image:
       "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/paintings/ur4ptf5gleqd8llcumjg",
   },
+
   {
     id: 18,
     name: "Caravaggio meets the Killers",
