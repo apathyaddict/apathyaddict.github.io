@@ -28,13 +28,17 @@ const Navbardev = () => {
               </ScrollLink>
             </li>
             <li className="nav-li ">
+              <ScrollLink to="skills" spy={true} smooth={true} duration={500}>
+                Skills
+              </ScrollLink>
+            </li>
+            <li className="nav-li ">
               <ScrollLink
                 to="contactDev"
                 spy={true}
                 smooth={true}
                 offset={50}
-                duration={500}
-              >
+                duration={500}>
                 Contact
               </ScrollLink>
             </li>
@@ -47,8 +51,7 @@ const Navbardev = () => {
       {/* hamburger */}
       <div
         onClick={handleClick}
-        className="md:hidden z-10 absolute top-4 right-4 text-slate-700"
-      >
+        className="md:hidden z-10 absolute top-4 right-4 text-slate-700">
         {!navDev ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
       {/* mobile */}
@@ -57,8 +60,7 @@ const Navbardev = () => {
           !navDev
             ? "hidden"
             : "absolute top-0 right-0 h-screen w-full flex flex-col justify-center items-center bg-beige text-slate-700"
-        }
-      >
+        }>
         <Link to="/">
           <li className="py-6 text-4xl">Home</li>
         </Link>
@@ -66,16 +68,21 @@ const Navbardev = () => {
           onClick={handleLinkClick}
           to="projects"
           spy={true}
-          smooth={true}
-        >
+          smooth={true}>
           <li className="py-6 text-4xl cursor-pointer">Projects</li>
+        </ScrollLink>
+        <ScrollLink
+          onClick={handleLinkClick}
+          to="skills"
+          spy={true}
+          smooth={true}>
+          <li className="py-6 text-4xl cursor-pointer">Skills</li>
         </ScrollLink>
         <ScrollLink
           onClick={handleLinkClick}
           to="contactDev"
           spy={true}
-          smooth={true}
-        >
+          smooth={true}>
           <li className="py-6 text-4xl cursor-pointer">Contact</li>
         </ScrollLink>
         <Link to="/art">

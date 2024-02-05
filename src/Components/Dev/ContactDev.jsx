@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 const ContactDev = () => {
   return (
     <section name="contactDev" className="py-10  ">
-      <div className=" h-full text-slate-700 m-6 mb-10 flex  flex-col justify-center ">
+      <div className=" h-full text-slate-700  mb-10 flex  flex-col justify-center ">
         <div className=" max-w-[1000px] p-4  mx-auto flex-1 flex justify-start  h-full w-full ">
           <h1 className="text-4xl  inline border-b-4  text-slate-700 border-bluegreen">
             Contact
@@ -26,12 +26,11 @@ const ContactDev = () => {
             </h2>
           </div>
           <div className="flex-1  flex   justify-center items-center m-4 border-red-500">
-            <div className="flex-1 flex flex-row justify-end ">
+            <div className="flex-1 flex flex-row md:justify-end justify-start  ">
               <a
                 href="https://www.linkedin.com/in/eveseni/"
                 className="hover:scale-125 hover:text-bluegreen"
-                target="_blank"
-              >
+                target="_blank">
                 <span>
                   <FaLinkedin className="icon h-10 w-10 m-4 transition-transform duration-300 ease-in-out " />
                 </span>
@@ -39,8 +38,7 @@ const ContactDev = () => {
               <a
                 href="https://github.com/apathyaddict"
                 className="hover:scale-125 hover:text-bluegreen"
-                target="_blank"
-              >
+                target="_blank">
                 <span>
                   <FaGithub className="icon h-10 w-10 m-4 transition-transform duration-300 ease-in-out" />
                 </span>
@@ -48,8 +46,7 @@ const ContactDev = () => {
               <a
                 href="mailto:arteveseni@gmail.com"
                 target="_blank"
-                className="hover:scale-125 hover:text-bluegreen"
-              >
+                className="hover:scale-125 hover:text-bluegreen">
                 <span>
                   <MdEmail className="icon h-10 w-10 m-4 transition-transform duration-300 ease-in-out" />
                 </span>
