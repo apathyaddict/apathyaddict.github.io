@@ -18,6 +18,7 @@ import {
   SiFirebase,
   SiAdobephotoshop,
   SiAdobeillustrator,
+  SiNextdotjs,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { AiOutlineConsoleSql } from "react-icons/ai";
@@ -33,6 +34,7 @@ const skills = [
   { icon: <FaReact />, name: "React", color: "#61DAFB" },
   { icon: <FaVuejs />, name: "Vue", color: "#4FC08D" },
   { icon: <FaAngular />, name: "Angular", color: "#DD0031" },
+  { icon: <SiNextdotjs />, name: "NextJs", color: "#black" },
   { icon: <FaNodeJs />, name: "Node", color: "#68A063" },
   { icon: <AiOutlineConsoleSql />, name: "SQL", color: "#336791" },
   { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },

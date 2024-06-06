@@ -1,21 +1,21 @@
 export const data = [
   {
     id: 1,
-    name: "Booked: Book Sharing App",
-    description: "React, Express, MongoDB",
+    name: "inferno. PDF manager.",
+    description: "Next, Typescript, MongoDB",
     image:
-      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/m0vny2c0ilkg2xaposnd",
-    github: "https://github.com/apathyaddict/FullAppBookExchangeFE",
-    live: "https://booked-omega.vercel.app/",
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/v1717691748/EvePortfolio/Projects/inferno_n2nh6m.png",
+    github: "https://github.com/apathyaddict/saas-next-1",
+    live: "https://inferno-rosy.vercel.app/",
   },
   {
     id: 2,
-    name: "Typescript Notes App",
-    description: "Typescript, Material UI, React",
+    name: "Wisdom generator: Suggestion à Gogo",
+    description: " Next, MongoDB",
     image:
-      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/agqfkgqxuoqkwgxpynic",
-    github: "https://github.com/apathyaddict/TypescriptNotes",
-    live: " https://main--whimsical-shortbread-0a06fa.netlify.app",
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/v1717691748/EvePortfolio/Projects/sugestion_t3enyv.png",
+    github: "https://github.com/apathyaddict/NextPrompt",
+    live: "https://next-prompt-seven.vercel.app/",
   },
   {
     id: 3,
@@ -28,24 +28,33 @@ export const data = [
   },
   {
     id: 4,
-    name: "Route Aware: crime Prevention",
-    description: "React, Google Map API, Chakra, Chart.JS",
+    name: "Typescript Notes App",
+    description: "Typescript, Material UI, React",
     image:
-      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/fczguqhjydmuw7g4jy1v",
-    github: "https://github.com/apathyaddict/RouteAware",
-    live: "",
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/agqfkgqxuoqkwgxpynic",
+    github: "https://github.com/apathyaddict/TypescriptNotes",
+    live: " https://main--whimsical-shortbread-0a06fa.netlify.app",
   },
   {
     id: 5,
+    name: "Booked: Book Sharing App",
+    description: "React, Express, MongoDB",
+    image:
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/m0vny2c0ilkg2xaposnd",
+    github: "https://github.com/apathyaddict/FullAppBookExchangeFE",
+    live: "https://booked-omega.vercel.app/",
+  },
+  {
+    id: 6,
     name: "Portofolio Website",
     description: "React, Tailwind, libraries",
     image:
       "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/mxxnuu1cgn2i3rl5ihkr",
     github: "https://github.com/apathyaddict/evesenicom",
-    live: "http://www.eveseni.com/art",
+    live: "www.eveseni.com/art",
   },
   {
-    id: 6,
+    id: 7,
     name: "AWS Server",
     description: "serverless AWS lambda function, AMA API ",
     image:
@@ -54,7 +63,7 @@ export const data = [
     live: "",
   },
   {
-    id: 7,
+    id: 8,
     name: "Tweet App",
     description: "React, FireBase, Firestore ",
     image:
@@ -64,12 +73,21 @@ export const data = [
     live: "https://micro-blog-f57a3.web.app/register",
   },
   {
-    id: 8,
+    id: 9,
     name: "Users and Data Backend End",
     description: "Express, MongoDB, Auth ",
     image:
       "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/xxhznexv3grtyr2nv7vh",
     github: "https://github.com/apathyaddict/FullAppBookExchangeBE",
+    live: "",
+  },
+  {
+    id: 10,
+    name: "Route Aware: crime Prevention",
+    description: "React, Google Map API, Chakra, Chart.JS",
+    image:
+      "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto/v1/EvePortfolio/fczguqhjydmuw7g4jy1v",
+    github: "https://github.com/apathyaddict/RouteAware",
     live: "",
   },
 ];
