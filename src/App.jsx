@@ -9,6 +9,7 @@ import LandingPage from "./Pages/LandingPage";
 import HomeDev from "./Pages/HomeDev";
 import Navbardev from "./Components/Dev/Navbardev";
 import HomeArt from "./Pages/HomeArt";
+import NewHomepage from "./Pages/NewHomepage";
 
 function App() {
   const contactPage = useRef(null);
@@ -33,6 +34,11 @@ function App() {
               <LandingPage {...{ eveImage }} />
             </>
           }
+        />
+
+        <Route
+          path="/new-homepage"
+          element={<NewHomepage />}
         />
 
         <Route
