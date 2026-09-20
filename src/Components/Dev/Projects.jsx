@@ -1,4 +1,3 @@
-import React from "react";
 import { data } from "../../data/projects";
 
 const Projects = () => {
@@ -47,9 +46,9 @@ const Projects = () => {
                       Code
                     </button>
                   </a>
-                  {/* eslint-disable-next-line */}
+                  { }
                   {item.live && (
-                    <a href={item.live} target="_blank">
+                    <a href={item.live} target="_blank" rel="noreferrer">
                       <button
                         target="_blank"
                         className="text-center rounded-full px-5 py-3 m-2

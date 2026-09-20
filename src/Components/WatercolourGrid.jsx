@@ -1,5 +1,5 @@
 import { watercolours } from "../data/watercolours";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../CSS/gallery.css";
 import { IoMdClose } from "react-icons/io";
 
@@ -16,16 +16,15 @@ const WatercolourGrid = () => {
 
   // PREVENT RIGHT CLICK
   useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+      console.log("Right click prevent to protect my art");
+    };
     document.addEventListener("contextmenu", handleContextMenu);
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
     };
   }, []);
-
-  const handleContextMenu = (e) => {
-    e.preventDefault();
-    console.log("Right click prevent to protect my art");
-  };
 
   return (
     <>

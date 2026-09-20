@@ -18,7 +18,7 @@ const HomeArt = ({ contactPage }) => {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white portofolio z-20"
             style={{ top: "65%", left: "50%" }}
           >
-            <h3 className="drop-shadow">PORTFOLIO </h3>
+            <h3 className="drop-shadow-sm">PORTFOLIO </h3>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const HomeArt = ({ contactPage }) => {
           <div className="flex-auto items-center justify-center text-center text-beige m-4 div-half">
             <h2 className="text-2xl font-bold ">Raison d'être</h2>
             <p className="pt-4 text-sm md:text-md lg:text-lg">
-              ​ Years ago, I stood in front of Caillobotte's Les raboteurs de
+               Years ago, I stood in front of Caillobotte's Les raboteurs de
               parquets in the Musée d'Orsay and it changed me.
             </p>
             <p className="mt-4 text-sm md:text-md lg:text-lg">
@@ -47,7 +47,7 @@ const HomeArt = ({ contactPage }) => {
               recreating that moment of transcendence for someone else.{" "}
             </p>
             <p className="mt-4 text-sm md:text-md lg:text-lg">
-              ​Or simply, I make art inspired by places, history, and
+              Or simply, I make art inspired by places, history, and
               literature.{" "}
             </p>
           </div>

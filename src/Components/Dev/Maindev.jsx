@@ -1,4 +1,3 @@
-import React from "react";
 
 const Maindev = ({ eveImage }) => {
   return (
@@ -32,7 +31,7 @@ const Maindev = ({ eveImage }) => {
             <div className=" flex justify-between items-center flex-col m-4 w-full md:w-3/4 lg:w-full ">
               <h2
                 className="lg:text-2xl md:text-2xl sm:text-md text-lg mb-3 font-bold md:items-center sm:items-center 
-              text-slate-400 bg-gradient-to-r from-teal-200 to-teal-500 bg-clip-text text-transparent
+              text-slate-400 bg-linear-to-r from-teal-200 to-teal-500 bg-clip-text text-transparent
               "
               >
                 I'm a fullstack developer

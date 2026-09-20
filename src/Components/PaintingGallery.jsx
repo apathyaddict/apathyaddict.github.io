@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "../CSS/gallery.css";
 import { IoMdClose } from "react-icons/io";
 import { paintings } from "../data/paintings";

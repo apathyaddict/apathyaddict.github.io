@@ -1,4 +1,3 @@
-import React from "react";
 import { FaStoreAlt, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const ContactDivArt = ({ contactPage }) => {
@@ -31,7 +30,7 @@ const ContactDivArt = ({ contactPage }) => {
           <div className="hover:text-darkbeige hover:scale-125">
             <p className="p-3 ">
               <FaStoreAlt className="inline mr-4 " />
-              <a href="https://society6.com/femalesaint" target="_blank">
+              <a href="https://society6.com/femalesaint" target="_blank" rel="noreferrer">
                 society6
               </a>
             </p>
@@ -39,7 +38,7 @@ const ContactDivArt = ({ contactPage }) => {
           <div className="hover:text-darkbeige hover:scale-125">
             <p className="p-3">
               <FaInstagram className="inline mr-2" />
-              <a href="https://www.instagram.com/female.saint/" target="_blank">
+              <a href="https://www.instagram.com/female.saint/" target="_blank" rel="noreferrer">
                 instagram
               </a>
             </p>
@@ -47,7 +46,7 @@ const ContactDivArt = ({ contactPage }) => {
           <div className="hover:text-darkbeige hover:scale-125">
             <p className="p-3">
               <FaEnvelope className="inline mr-2" />
-              <a href="mailto:arteveseni@gmail.com" target="_blank">
+              <a href="mailto:arteveseni@gmail.com" target="_blank" rel="noreferrer">
                 email
               </a>
             </p>

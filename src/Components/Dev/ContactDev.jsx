@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { TbMessageLanguage } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
@@ -30,7 +29,7 @@ const ContactDev = () => {
               <a
                 href="https://www.linkedin.com/in/eveseni/"
                 className="hover:scale-125 hover:text-bluegreen"
-                target="_blank">
+                target="_blank" rel="noreferrer">
                 <span>
                   <FaLinkedin className="icon h-10 w-10 m-4 transition-transform duration-300 ease-in-out " />
                 </span>
@@ -38,7 +37,7 @@ const ContactDev = () => {
               <a
                 href="https://github.com/apathyaddict"
                 className="hover:scale-125 hover:text-bluegreen"
-                target="_blank">
+                target="_blank" rel="noreferrer">
                 <span>
                   <FaGithub className="icon h-10 w-10 m-4 transition-transform duration-300 ease-in-out" />
                 </span>
@@ -46,7 +45,7 @@ const ContactDev = () => {
               <a
                 href="mailto:arteveseni@gmail.com"
                 target="_blank"
-                className="hover:scale-125 hover:text-bluegreen">
+                className="hover:scale-125 hover:text-bluegreen" rel="noreferrer">
                 <span>
                   <MdEmail className="icon h-10 w-10 m-4 transition-transform duration-300 ease-in-out" />
                 </span>

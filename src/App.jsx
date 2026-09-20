@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBarArt from "./Components/NavBarArt";
 import WatercolourGrid from "./Components/WatercolourGrid";

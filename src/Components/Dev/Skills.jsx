@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -16,8 +15,6 @@ import {
   SiTypescript,
   SiMongodb,
   SiFirebase,
-  SiAdobephotoshop,
-  SiAdobeillustrator,
   SiNextdotjs,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -40,8 +37,6 @@ const skills = [
   { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
   { icon: <SiFirebase />, name: "Firebase", color: "#FFCA28" },
   { icon: <FaGitAlt />, name: "Git", color: "#F05032" },
-  { icon: <SiAdobephotoshop />, name: "Photoshop", color: "#31A8FF" },
-  { icon: <SiAdobeillustrator />, name: "Illustrator", color: "#FF9A00" },
   { icon: <FaPaintBrush />, name: "Painting" },
 ];
 

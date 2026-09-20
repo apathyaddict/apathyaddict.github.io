@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
 const Navbardev = () => {
   const [navDev, setNavDev] = useState(false);
   const handleClick = () => setNavDev(!navDev);
   const handleLinkClick = () => setNavDev(false);
+  const scrollTo = (name) => {
+    document.querySelector(`[name="${name}"]`)?.scrollIntoView({ behavior: "smooth" });
+    handleLinkClick();
+  };
 
   return (
     <section className="relative">
@@ -23,24 +26,13 @@ const Navbardev = () => {
               <Link to="/"> Home</Link>
             </li>
             <li className="nav-li ">
-              <ScrollLink to="projects" spy={true} smooth={true} duration={500}>
-                Projects
-              </ScrollLink>
+              <button onClick={() => scrollTo("projects")}>Projects</button>
             </li>
             <li className="nav-li ">
-              <ScrollLink to="skills" spy={true} smooth={true} duration={500}>
-                Skills
-              </ScrollLink>
+              <button onClick={() => scrollTo("skills")}>Skills</button>
             </li>
             <li className="nav-li ">
-              <ScrollLink
-                to="contactDev"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}>
-                Contact
-              </ScrollLink>
+              <button onClick={() => scrollTo("contactDev")}>Contact</button>
             </li>
             <li className="nav-li ">
               <Link to="/art">Art Portfolio</Link>
@@ -64,27 +56,9 @@ const Navbardev = () => {
         <Link to="/">
           <li className="py-6 text-4xl">Home</li>
         </Link>
-        <ScrollLink
-          onClick={handleLinkClick}
-          to="projects"
-          spy={true}
-          smooth={true}>
-          <li className="py-6 text-4xl cursor-pointer">Projects</li>
-        </ScrollLink>
-        <ScrollLink
-          onClick={handleLinkClick}
-          to="skills"
-          spy={true}
-          smooth={true}>
-          <li className="py-6 text-4xl cursor-pointer">Skills</li>
-        </ScrollLink>
-        <ScrollLink
-          onClick={handleLinkClick}
-          to="contactDev"
-          spy={true}
-          smooth={true}>
-          <li className="py-6 text-4xl cursor-pointer">Contact</li>
-        </ScrollLink>
+        <li className="py-6 text-4xl cursor-pointer" onClick={() => scrollTo("projects")}>Projects</li>
+        <li className="py-6 text-4xl cursor-pointer" onClick={() => scrollTo("skills")}>Skills</li>
+        <li className="py-6 text-4xl cursor-pointer" onClick={() => scrollTo("contactDev")}>Contact</li>
         <Link to="/art">
           <li className="py-6 text-4xl">Art</li>
         </Link>
