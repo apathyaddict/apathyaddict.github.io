@@ -35,6 +35,36 @@
   transform: scaleX(1);
 }
 
+/* Type scale: one size per role */
+.founder-page .section-title {
+  font-family: "Bodoni Moda", "Didot", serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.founder-page .section-title-sm {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.founder-page .eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.founder-page .mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
 .founder-page .didone {
   font-family: "Bodoni Moda", "Didot", serif;
   font-weight: 400;
@@ -99,6 +129,7 @@
 
 .founder-page .stone-band {
   z-index: 2;
+  min-height: 0;
 }
 
 .founder-page #projects {
@@ -265,6 +296,7 @@
   position: relative;
   height: 640px;
   margin-top: 1rem;
+  margin-right: 2%;
 }
 
 .founder-page .moments figure {
@@ -286,7 +318,12 @@
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  filter: saturate(0.85) sepia(0.12);
+  filter: saturate(0.75) contrast(0.96) brightness(1.03);
+  transition: filter 0.4s ease;
+}
+
+.founder-page .moments figure:hover img {
+  filter: none;
 }
 
 .founder-page .moments .m-stage img,
@@ -313,17 +350,17 @@
 .founder-page .moments .m-win {
   left: 0;
   top: 0;
-  width: 54%;
+  width: 56%;
   transform: rotate(-2deg);
-  z-index: 2;
+  z-index: 3;
 }
 
 .founder-page .moments .m-stage {
   right: 0;
-  top: 6%;
-  width: 60%;
+  top: 26%;
+  width: 54%;
   transform: rotate(2.5deg);
-  z-index: 3;
+  z-index: 2;
 }
 
 .founder-page .moments .m-main {
@@ -392,11 +429,14 @@
   position: relative;
   padding: 0 0 1.6rem 2rem;
   border-left: 1px solid rgba(51, 65, 85, 0.35);
-  transition: transform 0.3s ease;
 }
 
 /* Hover: the stop lights up and the entry leans in */
-.founder-page .timeline li:hover .entry {
+.founder-page .timeline li {
+  transition: transform 0.3s ease;
+}
+
+.founder-page .timeline li:hover {
   transform: translateX(6px);
 }
 
@@ -428,15 +468,6 @@
   transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 767px) {
-  .founder-page .sky-photo,
-  .founder-page .stack-photo {
-    display: none;
-  }
-  .founder-page .hero {
-    height: 62vh;
-  }
-}
 
 @media (max-width: 640px) {
   .founder-page .timeline li {
@@ -488,5 +519,55 @@
   .founder-page a {
     font-family: inherit;
     letter-spacing: inherit;
+  }
+}
+
+@media (max-width: 767px) {
+  .founder-page .sky-photo,
+  .founder-page .stack-photo {
+    display: none;
+  }
+  /* No sticky slide-over on phones: sections just scroll */
+  .founder-page .hero,
+  .founder-page .stay.stay {
+    position: relative;
+    min-height: 0;
+  }
+  /* Phone: a slim banner — just her face and the word */
+  .founder-page .hero {
+    height: 200px;
+    background-position: center 14%;
+  }
+  .founder-page .hero-word {
+    padding-left: 0;
+    font-size: 3.4rem;
+    top: 58%;
+  }
+  .founder-page .hero::after {
+    height: 45%;
+  }
+  .founder-page .portrait {
+    width: 140px;
+    height: 186px;
+    border-radius: 70px 70px 0 0;
+  }
+  .founder-page .moments {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-right: 0;
+  }
+  .founder-page .moments figure {
+    position: static;
+    transform: none !important;
+    width: auto !important;
+  }
+  .founder-page .moments .m-win,
+  .founder-page .moments .m-stage {
+    grid-column: 1 / 3;
+  }
+  .founder-page .section-title {
+    margin-bottom: 1.25rem;
   }
 }
