@@ -65,7 +65,7 @@ describe("art pages", () => {
 
   it("art nav links to the founder page and the other art pages", () => {
     renderAt("/art/prints");
-    expect(screen.getAllByRole("link", { name: "Coding" })[0]).toHaveAttribute("href", "/dev");
+    expect(screen.getAllByRole("link", { name: "Founder" })[0]).toHaveAttribute("href", "/dev");
     expect(screen.getAllByRole("link", { name: "Paintings" })[0]).toHaveAttribute("href", "/art/paintings");
   });
 

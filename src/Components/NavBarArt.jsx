@@ -30,7 +30,7 @@ const NavBarArt = ({ scrollToSection, contactPage }) => {
       </li>
       <li>
         <Link to="/dev" className="navlink">
-          Coding
+          Founder
         </Link>
       </li>
     </>

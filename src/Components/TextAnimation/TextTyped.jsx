@@ -23,7 +23,7 @@ const TextTyped = () => {
   return (
     <div className="anim-wrapper mt-5 ">
       <h1 className="text-anim text-2xl md:4xl">
-        I'm <span className="h1-anim" ref={el}></span>
+        I'm <span className="h1-anim" ref={el}>a startup founder</span>
       </h1>
     </div>
   );

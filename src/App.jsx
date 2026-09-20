@@ -4,7 +4,6 @@ import NavBarArt from "./Components/NavBarArt";
 import WatercolourGrid from "./Components/WatercolourGrid";
 
 import PaintingGallery from "./Components/PaintingGallery";
-// import WatercolourGallery from "./Components/WatercoloursDiv";
 import LandingPage from "./Pages/LandingPage";
 import HomeArt from "./Pages/HomeArt";
 import FounderPage from "./Pages/FounderPage";

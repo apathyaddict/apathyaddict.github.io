@@ -21,6 +21,7 @@ const HomeArt = ({ contactPage }) => {
 
   return (
     <div className="founder-page flex flex-col align-start h-full bg-beige">
+      <title>Art — Ève Aimée Seni</title>
       <div
         className="flex-1 h-full mainImage no-copy-img"
         style={{

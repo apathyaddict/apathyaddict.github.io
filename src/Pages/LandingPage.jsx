@@ -8,6 +8,7 @@ import "../CSS/founder.css";
 const LandingPage = ({ eveImage }) => {
   return (
     <div className="founder-page flex h-screen items-center justify-center">
+      <title>Ève Aimée Seni</title>
       <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 w-11/12 max-w-[1100px]">
         <div className="shrink-0 flex justify-center items-center">
           <img

@@ -554,13 +554,7 @@
 }
 
 /* Hover: the stop lights up and the entry leans in */
-.founder-page .timeline li {
-  transition: transform 0.3s ease;
-}
 
-.founder-page .timeline li:hover {
-  transform: translateX(6px);
-}
 
 .founder-page .timeline li:hover .dot {
   background: var(--accent);

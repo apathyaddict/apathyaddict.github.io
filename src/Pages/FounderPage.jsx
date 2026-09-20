@@ -13,11 +13,11 @@ const stack = [
 ];
 
 const journey = [
-  { when: "2018", title: "Award-nominated history teacher", text: "Nominated for the Governor General's History Award for Excellence in Teaching." },
-  { when: "2022", title: "Learning to code", text: "Left the classroom for a coding bootcamp, then shipped a project a week." },
-  { when: "2024", title: "Founding LOCVM", text: "First commit on a problem physicians kept telling us about." },
-  { when: "2025", title: "Pitching, and winning", text: "Pitched a product I'd built myself to rooms of judges. LOCVM has won six times; twice with me on stage." },
-  { when: "Now", title: "Full-time CTO & co-founder", text: "Running product and engineering, shipping every week, hiring the team around it." },
+  { when: "2018", title: "Award-nominated history teacher", text: "After teaching for 5 years, Nominated by my studentsfor the Governor General's History Award for Excellence in Teaching and chosen as finalist." },
+  { when: "2022", title: "Learning to code at <ITC>", text: "Accepted on an excellence scholarship into a highly competitive six-month bootcamp." },
+  { when: "2024", title: "Founding LOCVM", text: "After years of friendship, Ange and I start our startup journey." },
+  { when: "2025", title: "Pitching, Growing, and Winning", text: "Started Pitching. LOCVM has won six times; twice with me on stage." },
+  { when: "Now", title: "Full-time CTO & co-founder", text: "Running product and engineering, working on pruduct, co-leading the team, shipping every 3x a week." },
 ];
 
 const earlier = [
@@ -27,9 +27,9 @@ const earlier = [
 ];
 
 const moments = [
-  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_1000/v1789495012/LOCVM-news/LocvmWinner_ozmced.png", alt: "LOCVM wins the Scale-Up Innovator Award", cls: "m-win", caption: "BVZ Scale-Up Innovator Award · $15,000" },
+  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_1000/v1789495012/LOCVM-news/LocvmWinner_ozmced.png", alt: "LOCVM wins the Scale-Up Innovator Award", cls: "m-win", caption: "BVZ Scale-Up Innovator Award" },
   { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869726/EvePortfolio/Site%20Elements/IMG_9697_qodggw.png", alt: "ChaiTech finalists on stage", cls: "m-stage", caption: "ChaiTech Den 6 · finalists" },
-  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869731/EvePortfolio/Site%20Elements/IMG_9642_pbfotd.jpg", alt: "Ève with the LOCVM banner", cls: "m-main", caption: "Toronto · 2026" },
+  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869731/EvePortfolio/Site%20Elements/IMG_9642_pbfotd.jpg", alt: "Ève with the LOCVM banner", cls: "m-main", caption: "Winning at UofT" },
   { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869735/EvePortfolio/Site%20Elements/IMG_3598_qt1yow.jpg", alt: "LOCVM team at BVZ", cls: "m-team", caption: "At BVZ" },
 ];
 
@@ -42,6 +42,7 @@ const skills = [
 const FounderPage = ({ eveImage }) => {
   return (
     <div className="founder-page">
+      <title>Founder — Ève Aimée Seni</title>
       <header className="marble md:hidden px-6 pt-4 pb-1 text-center">
         <h1 className="didone text-slate-700 text-xl name-div pb-2">Ève Aimée Seni</h1>
         <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 py-2 font-mono text-[10px] tracking-[0.18em] uppercase text-slate-700">
@@ -148,8 +149,8 @@ const FounderPage = ({ eveImage }) => {
             <div>
               <p className="didone text-2xl mb-2">LOCVM</p>
               <p className="text-sm mb-4">
-                A healthcare locum marketplace for Canada — designed, built, and run by me since the
-                first commit. One codebase, everything inside:
+                A healthcare locum marketplace for Canada : co-designed, built, and run by me since the
+                first commit. 
               </p>
               <ul className="flex flex-wrap gap-1.5 mb-6">
                 {[
