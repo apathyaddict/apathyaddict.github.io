@@ -24,6 +24,8 @@ describe("landing page /", () => {
 describe("dev page /dev", () => {
   it("renders nav, every section and all project cards", () => {
     renderAt("/dev");
+    expect(screen.getByRole("heading", { name: /Co-Founder and Tech Lead at LOCVM/ })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "LOCVM" })).toHaveAttribute("href", "https://www.locvm.ca");
     for (const label of ["Projects", "Skills", "Contact"]) {
       expect(screen.getByRole("button", { name: label })).toBeInTheDocument();
       expect(screen.getByRole("heading", { name: label })).toBeInTheDocument();

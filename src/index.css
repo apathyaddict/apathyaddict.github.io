@@ -26,52 +26,55 @@
   }
 }
 
-:root,
-#root,
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background-color: #f7f5ee;
-}
+/* Element defaults live in the base layer so Tailwind utilities can override them. */
+@layer base {
+  :root,
+  #root,
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: #f7f5ee;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* border: 1px solid black */
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black */
+  }
 
-h1 {
-  font-weight: 700;
-  font-family: 'Comfortaa', sans-serif;
-}
+  h1 {
+    font-weight: 700;
+    font-family: 'Comfortaa', sans-serif;
+  }
 
-h2 {
-  font-family: 'Comfortaa', sans-serif;
-  letter-spacing: 0.06rem;
-  font-weight: 400;
-}
+  h2 {
+    font-family: 'Comfortaa', sans-serif;
+    letter-spacing: 0.06rem;
+    font-weight: 400;
+  }
 
-h3 {
-  font-family: 'Poppins', sans-serif;
-}
+  h3 {
+    font-family: 'Poppins', sans-serif;
+  }
 
-p {
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.06rem;
-  font-weight: 200;
-  font-size: 1rem;
-}
+  p {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.06rem;
+    font-weight: 200;
+    font-size: 1rem;
+  }
 
-a,
-.link-art-nav {
-  font-family: 'Comfortaa', sans-serif;
-  letter-spacing: 0.06rem;
-}
+  a,
+  .link-art-nav {
+    font-family: 'Comfortaa', sans-serif;
+    letter-spacing: 0.06rem;
+  }
 
-button {
-  font-family: 'Comfortaa', sans-serif;
+  button {
+    font-family: 'Comfortaa', sans-serif;
+  }
 }
 
 .no-copy-img {
