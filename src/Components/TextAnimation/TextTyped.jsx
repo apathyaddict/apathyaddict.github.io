@@ -8,8 +8,11 @@ const TextTyped = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["a fullstack developer", "also an artist."],
+      strings: ["a startup founder", "a fullstack developer", "also an artist."],
       typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 1400,
+      loop: true,
     });
 
     return () => {

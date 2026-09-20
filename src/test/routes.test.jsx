@@ -15,7 +15,7 @@ describe("landing page /", () => {
   it("shows the name and both section links", () => {
     renderAt("/");
     expect(screen.getByRole("heading", { name: /Ève Aimée Seni/ })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Founder" })).toHaveAttribute("href", "/dev");
+    expect(screen.getByRole("link", { name: "Founder & Coder" })).toHaveAttribute("href", "/dev");
     expect(screen.getByRole("link", { name: "Artist" })).toHaveAttribute("href", "/art");
   });
 });

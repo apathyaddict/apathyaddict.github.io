@@ -54,10 +54,10 @@ const FounderPage = ({ eveImage }) => {
       </header>
       <header className="marble hidden md:flex w-3/4 mx-auto mt-10 flex-col">
         <div className="name-div py-4">
-          <h1 className="didone text-center text-slate-700 text-3xl">Ève Aimée Seni</h1>
+          <h1 className="didone text-center text-slate-700 text-4xl">Ève Aimée Seni</h1>
         </div>
         <nav>
-          <ul className="flex items-center justify-center gap-10 py-4 font-mono text-[11px] tracking-[0.2em] uppercase text-slate-700">
+          <ul className="flex items-center justify-center gap-12 py-5 font-mono text-[13px] tracking-[0.2em] uppercase text-slate-700">
             <li><Link to="/" className="navlink">Home</Link></li>
             <li><a href="#about" className="navlink">Founder</a></li>
             <li><a href="#milestones" className="navlink">Milestones</a></li>
@@ -89,7 +89,7 @@ const FounderPage = ({ eveImage }) => {
             </p>
             <p className="mb-3">
               Today I'm the co-founder and tech lead of{" "}
-              <a href={identity.links.site} target="_blank" rel="noreferrer" className="font-bold underline decoration-slate-400 underline-offset-4 hover:text-slate-500">
+              <a href={identity.links.site} target="_blank" rel="noreferrer" className="font-bold underline decoration-slate-400 underline-offset-4 accent-hover">
                 LOCVM
               </a>
               , a healthcare locum marketplace for Canada that I've built from the first commit.
@@ -107,13 +107,14 @@ const FounderPage = ({ eveImage }) => {
       </section>
 
       {/* Journey: Acropolis sky */}
-      <section id="milestones" className="over stone-band stay">
+      <section id="milestones" className="over stone-band clay-band stay">
+        <img src="/images/founder/caryatids.jpg" alt="" className="band-photo" />
         <div className="relative max-w-[1100px] mx-auto px-6 pt-10 md:pt-14 pb-14 md:pb-28 grid md:grid-cols-[1fr_44%] gap-10 items-start">
           <div>
           <h2 className="section-title">Milestones</h2>
           <ol className="timeline">
             {journey.map((step) => (
-              <li key={step.title}>
+              <li key={step.title} className={step.when === "Now" ? "is-now" : undefined}>
                 <p className="when">{step.when}</p>
                 <div className="entry">
                   <span className="dot" />
@@ -174,7 +175,7 @@ const FounderPage = ({ eveImage }) => {
                   [scale.components, "components"],
                 ].map(([n, label]) => (
                   <div key={label}>
-                    <dt className="didone text-2xl leading-none">{n}</dt>
+                    <dt className="didone text-2xl leading-none accent">{n}</dt>
                     <dd className="eyebrow mt-1">{label}</dd>
                   </div>
                 ))}
@@ -182,7 +183,7 @@ const FounderPage = ({ eveImage }) => {
               <p className="mono">
                 Next.js · React · Server Actions · MongoDB · Firebase · Stripe · JetPay · Vercel · GitHub Actions · self-hosted runners · Playwright · Jest
               </p>
-              <a href={identity.links.site} target="_blank" rel="noreferrer" className="eyebrow hover:underline">
+              <a href={identity.links.site} target="_blank" rel="noreferrer" className="eyebrow accent-hover font-bold !opacity-100 inline-block mt-6">
                 locvm.ca →
               </a>
             </div>
@@ -207,15 +208,15 @@ const FounderPage = ({ eveImage }) => {
       </section>
 
       {/* Stack: Parthenon stone */}
-      <section id="stack" className="over sage-band">
-        <img src="/images/founder/parthenon.webp" alt="" className="stack-photo" />
-        <div className="relative max-w-[1100px] mx-auto px-6 pt-10 pb-12 grid md:grid-cols-[38%_1fr] gap-10">
+      <section id="stack" className="over clay-band">
+        <img src="/images/founder/parthenon-cutout.png" alt="" className="stack-cutout" />
+        <div className="relative max-w-[1100px] mx-auto px-6 p-10 grid md:grid-cols-[40%_1fr] gap-8">
           <div className="hidden md:block" />
           <div>
             <h2 className="section-title">Stack &amp; skills</h2>
             <p className="eyebrow">Stack</p>
             <p className="mono">{stack.join("  ·  ")}</p>
-            <p className="eyebrow">Skills</p>
+            <p className="eyebrow mt-6">Skills</p>
             <p className="mono">{skills.join("  ·  ")}</p>
           </div>
         </div>
@@ -229,9 +230,9 @@ const FounderPage = ({ eveImage }) => {
             <p className="mono">eve@locvm.ca · English / français</p>
           </div>
           <div className="flex gap-5">
-            <a href={identity.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:opacity-60"><FaLinkedin className="h-5 w-5" /></a>
-            <a href="https://github.com/apathyaddict" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:opacity-60"><FaGithub className="h-5 w-5" /></a>
-            <a href="mailto:eve@locvm.ca" aria-label="Email" className="hover:opacity-60"><MdEmail className="h-5 w-5" /></a>
+            <a href={identity.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="accent-hover"><FaLinkedin className="h-5 w-5" /></a>
+            <a href="https://github.com/apathyaddict" target="_blank" rel="noreferrer" aria-label="GitHub" className="accent-hover"><FaGithub className="h-5 w-5" /></a>
+            <a href="mailto:eve@locvm.ca" aria-label="Email" className="accent-hover"><MdEmail className="h-5 w-5" /></a>
           </div>
         </div>
         <p className="max-w-[1100px] mx-auto px-6 pt-4 pb-4 text-center mono border-t border-slate-700/15">© 2026 — Designed, coded, and created by Eve Seni</p>
