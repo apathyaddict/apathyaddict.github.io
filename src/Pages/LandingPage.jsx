@@ -8,8 +8,8 @@ import "../CSS/founder.css";
 const LandingPage = ({ eveImage }) => {
   return (
     <div className="founder-page flex h-screen items-center justify-center">
-      <div className=" flex lg:flex-row md:flex-col sm:flex-col flex-col h-3/4 w-4/5">
-        <div className="flex-1 h-full flex justify-center items-center">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 w-11/12 max-w-[1100px]">
+        <div className="shrink-0 flex justify-center items-center">
           <img
             src={eveImage}
             alt=""
@@ -17,12 +17,12 @@ const LandingPage = ({ eveImage }) => {
           />
         </div>
 
-        <div className=" flex-1 h-full flex justify-center items-center">
-          <div className="flex flex-col justify-center items-center ">
+        <div className="flex justify-center items-center">
+          <div className="flex flex-col justify-center items-center">
             <p className="lg:pb-4 pb-2 mt-2 lg:text-xl md:text-lg sm:text-sm text-sm">
               Hello, I'm
             </p>
-            <h1 className="lg:text-6xl md:text-5xl sm:text-5xl text-4xl text-slate-700">
+            <h1 className="lg:text-6xl md:text-5xl text-4xl text-slate-700 md:whitespace-nowrap text-center">
               Ève Aimée Seni
             </h1>
 

@@ -124,7 +124,7 @@
   top: 50%;
   transform: translateY(-40%);
   color: #f7f5ee;
-  font-size: clamp(3.2rem, 19vw, 18rem);
+  font-size: clamp(3.2rem, 17vw, 16rem);
   line-height: 0.85;
   white-space: nowrap;
   mix-blend-mode: screen;
@@ -719,6 +719,7 @@
     width: 200px;
     height: 200px;
   }
+
   .founder-page .btn-a {
     padding: 0.8rem 1.2rem;
     font-size: 11px;
