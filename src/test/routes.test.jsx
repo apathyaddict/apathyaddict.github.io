@@ -37,6 +37,15 @@ describe("dev page /dev", () => {
   });
 });
 
+describe("founder page /founder", () => {
+  it("renders the founder half and the cut", () => {
+    renderAt("/founder");
+    expect(screen.getByLabelText("Founder, Tech Lead")).toBeInTheDocument();
+    expect(screen.getByText(/co-founder and tech lead of/)).toBeInTheDocument();
+    expect(screen.getByText(/Photoshop/)).toBeInTheDocument();
+  });
+});
+
 describe("art pages", () => {
   it("/art renders the portfolio home with carousel and contact", () => {
     renderAt("/art");

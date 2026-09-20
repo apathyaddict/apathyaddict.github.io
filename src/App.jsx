@@ -9,6 +9,7 @@ import LandingPage from "./Pages/LandingPage";
 import HomeDev from "./Pages/HomeDev";
 import Navbardev from "./Components/Dev/Navbardev";
 import HomeArt from "./Pages/HomeArt";
+import FounderPage from "./Pages/FounderPage";
 
 function App() {
   const contactPage = useRef(null);
@@ -49,6 +50,8 @@ function App() {
             </>
           }
         />
+
+        <Route path="/founder" element={<FounderPage {...{ eveImage }} />} />
 
         <Route
           path="/dev/*"
