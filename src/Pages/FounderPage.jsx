@@ -15,8 +15,8 @@ const stack = [
 const journey = [
   { when: "2018", title: "Award-nominated history teacher", text: "Nominated for the Governor General's History Award for Excellence in Teaching." },
   { when: "2022", title: "Learning to code", text: "Left the classroom for a coding bootcamp, then shipped a project a week." },
-  { when: "Aug 2024", title: "Founding LOCVM", text: "First commit on a problem physicians kept telling us about." },
-  { when: "Dec 2025", title: "Pitching, and winning", text: "Pitched a product I'd built myself to rooms of judges. Two-time winner." },
+  { when: "2024", title: "Founding LOCVM", text: "First commit on a problem physicians kept telling us about." },
+  { when: "2025", title: "Pitching, and winning", text: "Pitched a product I'd built myself to rooms of judges. LOCVM has won six times; twice with me on stage." },
   { when: "Now", title: "Full-time CTO & co-founder", text: "Running product and engineering, shipping every week, hiring the team around it." },
 ];
 
@@ -24,6 +24,13 @@ const earlier = [
   { name: "cv-editor", what: "PDF privacy redaction service", stack: "Node · Express · PDF" },
   { name: "AWS server", what: "Serverless Lambda API", stack: "AWS Lambda · Node · AMA API", url: "https://github.com/apathyaddict/lambdaserverAskB" },
   { name: "hfo-calc", what: "FHO+ earnings calculator for Ontario physicians", stack: "JavaScript" },
+];
+
+const moments = [
+  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_1000/v1789495012/LOCVM-news/LocvmWinner_ozmced.png", alt: "LOCVM wins the Scale-Up Innovator Award", cls: "m-win", caption: "BVZ Scale-Up Innovator Award · $15,000" },
+  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869726/EvePortfolio/Site%20Elements/IMG_9697_qodggw.png", alt: "ChaiTech finalists on stage", cls: "m-stage", caption: "ChaiTech Den 6 · finalists" },
+  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869731/EvePortfolio/Site%20Elements/IMG_9642_pbfotd.jpg", alt: "Ève with the LOCVM banner", cls: "m-main", caption: "Toronto · 2026" },
+  { src: "https://res.cloudinary.com/dc2qd4mzh/image/upload/f_auto,q_auto,w_900/v1789869735/EvePortfolio/Site%20Elements/IMG_3598_qt1yow.jpg", alt: "LOCVM team at BVZ", cls: "m-team", caption: "At BVZ" },
 ];
 
 const skills = [
@@ -72,10 +79,10 @@ const FounderPage = ({ eveImage }) => {
 
       {/* Marble: the founder half slides over the hero with a torn edge */}
       <section id="about" className="over marble torn plate stay">
-        <div className="relative max-w-[1000px] mx-auto px-6 pt-16 md:pt-24 pb-20 md:pb-28 grid md:grid-cols-[340px_1fr] gap-10 md:gap-14 items-center">
+        <div className="relative max-w-[1060px] mx-auto px-6 pt-16 md:pt-24 pb-24 md:pb-36 grid md:grid-cols-[300px_1fr] gap-10 md:gap-16 items-center">
           <img src={eveImage} alt="" className="portrait justify-self-center" />
           <div>
-            <h2 className="didone text-4xl md:text-6xl leading-none mb-6">Ève</h2>
+            <h2 className="didone text-6xl md:text-8xl leading-none mb-8">Ève</h2>
             <p className="mb-3">
               With a passion for art, culture and learning. I have a background in history and
               teaching. My love for the past colors all my creations.
@@ -87,14 +94,13 @@ const FounderPage = ({ eveImage }) => {
               </a>
               , a healthcare locum marketplace for Canada that I've built from the first commit.
             </p>
-            <p className="mb-3">
-              In two years it has grown to 279 releases, become an official locum resource of the
-              Ontario Medical Association, won IDEA Mississauga's EmpowHER Tech Launchpad, and gone
-              live in two provinces.
-            </p>
             <p>
               Here you will find my projects, my skills, and everything coding related. If you want
               to discover my paintings head to the art section.
+            </p>
+            <p className="museum-line">
+              Why does this look like a museum? Because as a child I wanted to work in one, and I
+              never got over it.
             </p>
           </div>
         </div>
@@ -102,8 +108,8 @@ const FounderPage = ({ eveImage }) => {
 
       {/* Journey: Acropolis sky */}
       <section id="milestones" className="over stone-band stay">
-        <img src="/images/founder/caryatids.jpg" alt="" className="sky-photo" />
-        <div className="relative max-w-[1100px] mx-auto px-6 pt-14 pb-16">
+        <div className="relative max-w-[1100px] mx-auto px-6 pt-14 pb-28 grid md:grid-cols-[1fr_44%] gap-10 items-start">
+          <div>
           <h2 className="didone text-4xl md:text-6xl leading-none mb-8">Milestones</h2>
           <ol className="timeline">
             {journey.map((step) => (
@@ -111,12 +117,21 @@ const FounderPage = ({ eveImage }) => {
                 <p className="when">{step.when}</p>
                 <div className="entry">
                   <span className="dot" />
-                  <p className="font-bold text-lg leading-snug">{step.title}</p>
+                  <p className="font-[Comfortaa] font-bold text-base leading-snug">{step.title}</p>
                   <p className="text-sm mt-0.5 opacity-80">{step.text}</p>
                 </div>
               </li>
             ))}
           </ol>
+          </div>
+          <div className="moments">
+            {moments.map((m) => (
+              <figure key={m.src} className={m.cls}>
+                <img src={m.src} alt={m.alt} loading="lazy" />
+                <figcaption>{m.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

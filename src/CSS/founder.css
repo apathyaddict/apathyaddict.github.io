@@ -52,9 +52,12 @@
 
 .founder-page .hero-word {
   position: absolute;
-  left: 50%;
+  left: 0;
+  width: 100%;
+  padding-left: 8%;
+  box-sizing: border-box;
   top: 50%;
-  transform: translate(-50%, -40%);
+  transform: translateY(-40%);
   color: #f7f5ee;
   font-size: clamp(3.2rem, 19vw, 18rem);
   line-height: 0.85;
@@ -91,6 +94,7 @@
 .founder-page .stay.stay {
   position: sticky;
   top: 0;
+  min-height: 100vh;
 }
 
 .founder-page .stone-band {
@@ -256,6 +260,88 @@
   color: var(--stone-ink);
 }
 
+/* Milestone photos: prints pinned on the wall, each with a caption */
+.founder-page .moments {
+  position: relative;
+  height: 640px;
+  margin-top: 1rem;
+}
+
+.founder-page .moments figure {
+  position: absolute;
+  margin: 0;
+  background: #fffdf8;
+  padding: 10px 10px 34px;
+  box-shadow: 0 14px 30px -14px rgba(31, 41, 55, 0.45), 0 2px 4px rgba(31, 41, 55, 0.08);
+  transition: transform 0.4s ease, z-index 0s 0.2s;
+}
+
+.founder-page .moments figure:hover {
+  transform: rotate(0deg) scale(1.04) !important;
+  z-index: 5;
+}
+
+.founder-page .moments img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: saturate(0.85) sepia(0.12);
+}
+
+.founder-page .moments .m-stage img,
+.founder-page .moments .m-win img {
+  aspect-ratio: 16 / 10;
+}
+
+.founder-page .moments figcaption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 9px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #334155;
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.founder-page .moments .m-win {
+  left: 0;
+  top: 0;
+  width: 54%;
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+
+.founder-page .moments .m-stage {
+  right: 0;
+  top: 6%;
+  width: 60%;
+  transform: rotate(2.5deg);
+  z-index: 3;
+}
+
+.founder-page .moments .m-main {
+  left: 4%;
+  bottom: 0;
+  width: 40%;
+  transform: rotate(1.5deg);
+  z-index: 4;
+}
+
+.founder-page .moments .m-team {
+  right: 6%;
+  bottom: 2%;
+  width: 42%;
+  transform: rotate(-2deg);
+  z-index: 1;
+}
+
 /* Caryatids sit at the right edge and dissolve into the sky colour */
 .founder-page .sky-photo {
   position: absolute;
@@ -363,6 +449,18 @@
   }
 }
 
+/* The museum line */
+.founder-page .museum-line {
+  font-family: "Bodoni Moda", serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.2);
+  max-width: 560px;
+}
+
 /* Arched portrait, like a niche */
 .founder-page .portrait {
   width: min(300px, 80vw);
@@ -384,5 +482,11 @@
     font-weight: 400;
     font-size: 1.05rem;
     line-height: 1.7;
+  }
+
+  /* The site-wide `a` rule switches links to Comfortaa; on this page links inherit */
+  .founder-page a {
+    font-family: inherit;
+    letter-spacing: inherit;
   }
 }

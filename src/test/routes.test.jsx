@@ -26,9 +26,16 @@ describe("founder page /dev", () => {
     expect(screen.getByLabelText("Founder, Tech Lead")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Ève" })).toBeInTheDocument();
     expect(screen.getByText(/co-founder and tech lead of/)).toBeInTheDocument();
+    expect(screen.getByText(/Why does this look like a museum/)).toBeInTheDocument();
     expect(screen.getByText("Full-time CTO & co-founder")).toBeInTheDocument();
+    expect(screen.getAllByRole("figure")).toHaveLength(4);
+    expect(screen.getByText("BVZ Scale-Up Innovator Award · $15,000")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Projects" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /locvm\.ca/i })).toHaveAttribute("href", "https://www.locvm.ca");
+    expect(screen.getByText("98k")).toBeInTheDocument();
+    expect(screen.getByText("Geospatial job search & map")).toBeInTheDocument();
+    expect(screen.getByText("cv-editor").closest("a")).toBeNull();
+    expect(screen.getByText("AWS server").closest("a")).toHaveAttribute("href", "https://github.com/apathyaddict/lambdaserverAskB");
     expect(screen.getByText(/Photoshop/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:eve@locvm.ca");
   });
