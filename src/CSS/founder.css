@@ -5,9 +5,10 @@
   --stone-ink: #334155;
   --sage: #b7c4b1;
   --blush: #f0d9c8;
-  --forge: #0c0f14;
-  --forge-ink: #e7e5df;
-  --ember: #32ccbc;
+  --sky: #6abbd6;
+  --sky-ink: #1f3a4a;
+  --stonewarm: #e6dccb;
+  --accent: #8a6d3b; /* aged bronze, from the Arles wall */
 }
 
 .founder-page .didone {
@@ -62,6 +63,21 @@
   z-index: 1;
 }
 
+/* About also stays put, so Milestones slides over it the way About slides over the hero */
+.founder-page .stay {
+  position: sticky;
+  top: 0;
+}
+
+.founder-page .stone-band {
+  z-index: 2;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.founder-page #stack {
+  z-index: 3;
+}
+
 /* The photo dissolves into the paper. */
 .founder-page .hero::after {
   content: "";
@@ -76,12 +92,126 @@
   margin-top: 0;
 }
 
-.founder-page .marble { background: var(--stone); color: var(--stone-ink); }
-.founder-page .forge { background: var(--forge); color: var(--forge-ink); }
+/* Faint Doric order engraving (Met, CC0) behind the about copy */
+.founder-page .plate {
+  position: relative;
+}
 
-.founder-page .cut-line {
-  height: 6px;
-  background: linear-gradient(to right, var(--stone-ink), var(--ember), var(--stone-ink));
+.founder-page .plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/founder/doric-plate.jpg") right -80px top -40px / 620px auto no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+  mask-image: radial-gradient(ellipse 60% 70% at 78% 45%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 78% 45%, black 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.founder-page .marble { background: var(--stone); color: var(--stone-ink); }
+.founder-page .stone-band {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--stonewarm);
+  color: var(--stone-ink);
+}
+
+/* Caryatids sit at the right edge and dissolve into the sky colour */
+.founder-page .sky-photo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 88%;
+  width: 34%;
+  object-fit: cover;
+  object-position: right bottom;
+  mask-image: linear-gradient(to right, transparent, black 45%), linear-gradient(to top, black 70%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 45%), linear-gradient(to top, black 70%, transparent);
+  -webkit-mask-composite: source-in;
+  filter: grayscale(1) sepia(0.35) contrast(0.95) brightness(1.05);
+  mix-blend-mode: multiply;
+}
+
+.founder-page .stone {
+  background-color: var(--stonewarm);
+  color: var(--stone-ink);
+}
+
+/* Milestones: vertical list, big date on the left, rule with stops on the right */
+.founder-page .timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 600px;
+}
+
+.founder-page .timeline li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+}
+
+.founder-page .timeline .when {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 0.15rem;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+.founder-page .timeline .entry {
+  position: relative;
+  padding: 0 0 1.6rem 2rem;
+  border-left: 1px solid rgba(51, 65, 85, 0.35);
+  transition: transform 0.3s ease;
+}
+
+/* Hover: the stop lights up and the entry leans in */
+.founder-page .timeline li:hover .entry {
+  transform: translateX(6px);
+}
+
+.founder-page .timeline li:hover .dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 6px rgba(138, 109, 59, 0.22);
+}
+
+.founder-page .timeline li:hover .when {
+  color: var(--accent);
+}
+
+.founder-page .timeline li:last-child .entry {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.founder-page .timeline .dot {
+  position: absolute;
+  left: -0.55rem;
+  top: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--stone);
+  border: 2px solid var(--stone-ink);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .founder-page .timeline li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .founder-page .timeline .when {
+    text-align: left;
+    padding-left: 2rem;
+  }
 }
 
 /* Arched portrait, like a niche */

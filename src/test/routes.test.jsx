@@ -43,6 +43,7 @@ describe("founder page /founder", () => {
     expect(screen.getByLabelText("Founder, Tech Lead")).toBeInTheDocument();
     expect(screen.getByText(/co-founder and tech lead of/)).toBeInTheDocument();
     expect(screen.getByText(/Photoshop/)).toBeInTheDocument();
+    expect(screen.getByText("Full-time CTO & co-founder")).toBeInTheDocument();
   });
 });
 

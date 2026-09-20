@@ -8,9 +8,18 @@ const stack = [
   "Docker", "Playwright", "Jest", "Git",
 ];
 
+const journey = [
+  { when: "2018", title: "Award-nominated history teacher", text: "Nominated for the Governor General's History Award for Excellence in Teaching." },
+  { when: "2022", title: "Learning to code", text: "Left the classroom for a coding bootcamp, then shipped a project a week." },
+  { when: "Aug 2024", title: "Founding LOCVM", text: "First commit on a problem physicians kept telling us about." },
+  { when: "Dec 2025", title: "Pitching, and winning", text: "Pitched a product I'd built myself to rooms of judges. Two-time winner." },
+  { when: "Now", title: "Full-time CTO & co-founder", text: "Running product and engineering, shipping every week, hiring the team around it." },
+];
+
 const skills = [
-  "Product design", "UI design", "Photoshop", "Illustrator", "Painting", "Teaching", "Writing",
-  "Bilingual EN / FR",
+  "Founding & running a company", "Product strategy", "Building a product from zero to market",
+  "Pitching & public speaking", "Team building & mentoring", "Hiring", "Teaching", "Writing",
+  "Product design", "UI design", "Photoshop", "Illustrator", "Painting", "Bilingual EN / FR",
 ];
 
 const FounderPage = ({ eveImage }) => {
@@ -24,6 +33,7 @@ const FounderPage = ({ eveImage }) => {
           <ul className="flex items-center w-3/4 mx-auto justify-around py-4 text-slate-700">
             <li className="nav-li hover:font-bold"><Link to="/">Home</Link></li>
             <li className="nav-li hover:font-bold"><a href="#about">Founder</a></li>
+            <li className="nav-li hover:font-bold"><a href="#milestones">Milestones</a></li>
             <li className="nav-li hover:font-bold"><a href="#stack">Stack</a></li>
             <li className="nav-li hover:font-bold"><Link to="/art">Art Portfolio</Link></li>
           </ul>
@@ -41,8 +51,8 @@ const FounderPage = ({ eveImage }) => {
       </section>
 
       {/* Marble: the founder half slides over the hero with a torn edge */}
-      <section id="about" className="over marble torn">
-        <div className="max-w-[1000px] mx-auto px-6 pt-24 pb-28 grid md:grid-cols-[340px_1fr] gap-14 items-center">
+      <section id="about" className="over marble torn plate stay">
+        <div className="relative max-w-[1000px] mx-auto px-6 pt-24 pb-28 grid md:grid-cols-[340px_1fr] gap-14 items-center">
           <img src={eveImage} alt="" className="portrait justify-self-center" />
           <div>
             <p className="mb-3">
@@ -51,7 +61,7 @@ const FounderPage = ({ eveImage }) => {
             </p>
             <p className="mb-3">
               Today I'm the co-founder and tech lead of{" "}
-              <a href={identity.links.site} target="_blank" rel="noreferrer" className="font-bold underline decoration-bluegreen underline-offset-4 hover:text-bluegreen">
+              <a href={identity.links.site} target="_blank" rel="noreferrer" className="font-bold underline decoration-slate-400 underline-offset-4 hover:text-slate-500">
                 LOCVM
               </a>
               , a healthcare locum marketplace for Canada that I've built from the first commit.
@@ -69,15 +79,33 @@ const FounderPage = ({ eveImage }) => {
         </div>
       </section>
 
-      <div className="over cut-line" />
+      {/* Journey: Acropolis sky */}
+      <section id="milestones" className="over stone-band">
+        <img src="/images/founder/caryatids.jpg" alt="" className="sky-photo" />
+        <div className="relative max-w-[1100px] mx-auto px-6 pt-14 pb-16">
+          <h2 className="didone text-4xl md:text-6xl leading-none mb-8">Milestones</h2>
+          <ol className="timeline">
+            {journey.map((step) => (
+              <li key={step.title}>
+                <p className="when">{step.when}</p>
+                <div className="entry">
+                  <span className="dot" />
+                  <p className="font-bold text-lg leading-snug">{step.title}</p>
+                  <p className="text-sm mt-0.5 opacity-80">{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
-      {/* Forge: the coder half */}
-      <section id="stack" className="over forge min-h-screen">
+      {/* Stack: Parthenon stone */}
+      <section id="stack" className="over marble">
         <div className="max-w-[1100px] mx-auto px-6 py-20">
-          <p className="text-xs tracking-widest uppercase text-bluegreen mb-6">Stack</p>
-          <p className="text-sm md:text-base text-[#8b8f98] leading-loose">{stack.join("  ·  ")}</p>
-          <p className="text-xs tracking-widest uppercase text-bluegreen mt-14 mb-6">Skills</p>
-          <p className="text-sm md:text-base text-[#8b8f98] leading-loose">{skills.join("  ·  ")}</p>
+          <p className="text-xs tracking-widest uppercase mb-6 opacity-70">Stack</p>
+          <p className="font-mono text-sm md:text-base leading-loose">{stack.join("  ·  ")}</p>
+          <p className="text-xs tracking-widest uppercase mt-14 mb-6 opacity-70">Skills</p>
+          <p className="font-mono text-sm md:text-base leading-loose">{skills.join("  ·  ")}</p>
         </div>
       </section>
     </div>
