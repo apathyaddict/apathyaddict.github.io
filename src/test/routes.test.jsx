@@ -1,7 +1,6 @@
 import { describe, it, expect, afterEach } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 import App from "../App";
-import { data as projects } from "../data/projects";
 import { watercolours } from "../data/watercolours";
 import { paintings } from "../data/paintings";
 
@@ -16,34 +15,27 @@ describe("landing page /", () => {
   it("shows the name and both section links", () => {
     renderAt("/");
     expect(screen.getByRole("heading", { name: /Ève Aimée Seni/ })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Developer" })).toHaveAttribute("href", "/dev");
+    expect(screen.getByRole("link", { name: "Founder" })).toHaveAttribute("href", "/dev");
     expect(screen.getByRole("link", { name: "Artist" })).toHaveAttribute("href", "/art");
   });
 });
 
-describe("dev page /dev", () => {
-  it("renders nav, every section and all project cards", () => {
+describe("founder page /dev", () => {
+  it("renders hero, about, milestones, projects, stack and contact", () => {
     renderAt("/dev");
-    expect(screen.getByRole("heading", { name: /Co-Founder and Tech Lead at LOCVM/ })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "LOCVM" })).toHaveAttribute("href", "https://www.locvm.ca");
-    for (const label of ["Projects", "Skills", "Contact"]) {
-      expect(screen.getByRole("button", { name: label })).toBeInTheDocument();
-      expect(screen.getByRole("heading", { name: label })).toBeInTheDocument();
-    }
-    for (const project of projects) {
-      expect(screen.getByText(project.name)).toBeInTheDocument();
-    }
-    expect(screen.getByRole("link", { name: "Art Portfolio" })).toHaveAttribute("href", "/art");
-  });
-});
-
-describe("founder page /founder", () => {
-  it("renders the founder half and the cut", () => {
-    renderAt("/founder");
     expect(screen.getByLabelText("Founder, Tech Lead")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Ève" })).toBeInTheDocument();
     expect(screen.getByText(/co-founder and tech lead of/)).toBeInTheDocument();
-    expect(screen.getByText(/Photoshop/)).toBeInTheDocument();
     expect(screen.getByText("Full-time CTO & co-founder")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Projects" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /locvm\.ca/i })).toHaveAttribute("href", "https://www.locvm.ca");
+    expect(screen.getByText(/Photoshop/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:eve@locvm.ca");
+  });
+
+  it("/founder redirects to /dev", () => {
+    renderAt("/founder");
+    expect(window.location.pathname).toBe("/dev");
   });
 });
 

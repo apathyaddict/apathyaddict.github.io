@@ -1,13 +1,11 @@
 import { useRef } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBarArt from "./Components/NavBarArt";
 import WatercolourGrid from "./Components/WatercolourGrid";
 
 import PaintingGallery from "./Components/PaintingGallery";
 // import WatercolourGallery from "./Components/WatercoloursDiv";
 import LandingPage from "./Pages/LandingPage";
-import HomeDev from "./Pages/HomeDev";
-import Navbardev from "./Components/Dev/Navbardev";
 import HomeArt from "./Pages/HomeArt";
 import FounderPage from "./Pages/FounderPage";
 
@@ -51,19 +49,8 @@ function App() {
           }
         />
 
-        <Route path="/founder" element={<FounderPage {...{ eveImage }} />} />
-
-        <Route
-          path="/dev/*"
-          element={
-            <>
-              <Navbardev />
-              <Routes>
-                <Route path="/" element={<HomeDev {...{ eveImage }} />} />
-              </Routes>
-            </>
-          }
-        />
+        <Route path="/dev" element={<FounderPage {...{ eveImage }} />} />
+        <Route path="/founder" element={<Navigate to="/dev" replace />} />
       </Routes>
     </BrowserRouter>
   );

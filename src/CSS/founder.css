@@ -8,7 +8,31 @@
   --sky: #6abbd6;
   --sky-ink: #1f3a4a;
   --stonewarm: #e6dccb;
+  --sage: #e2d8c3; /* Parthenon stone, sunlit */
   --accent: #8a6d3b; /* aged bronze, from the Arles wall */
+}
+
+/* Header links: mono caps with an underline that draws in on hover */
+.founder-page .navlink {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.founder-page .navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.founder-page .navlink:hover::after {
+  transform: scaleX(1);
 }
 
 .founder-page .didone {
@@ -32,7 +56,7 @@
   top: 50%;
   transform: translate(-50%, -40%);
   color: #f7f5ee;
-  font-size: clamp(5rem, 19vw, 18rem);
+  font-size: clamp(3.2rem, 19vw, 18rem);
   line-height: 0.85;
   white-space: nowrap;
   mix-blend-mode: screen;
@@ -64,18 +88,132 @@
 }
 
 /* About also stays put, so Milestones slides over it the way About slides over the hero */
-.founder-page .stay {
+.founder-page .stay.stay {
   position: sticky;
   top: 0;
 }
 
 .founder-page .stone-band {
   z-index: 2;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.founder-page #projects {
+  z-index: 3;
 }
 
 .founder-page #stack {
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.founder-page .contact {
+  z-index: 5;
+  border-top: 1px solid rgba(51, 65, 85, 0.15);
+}
+
+/* Modern browser-window treatment: rounded, layered soft shadow, slight lift on hover */
+.founder-page .shot {
+  perspective: 1200px;
+}
+
+.founder-page .shot img {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(51, 65, 85, 0.12);
+  box-shadow:
+    0 1px 2px rgba(31, 41, 55, 0.06),
+    0 12px 30px -10px rgba(31, 41, 55, 0.25),
+    0 40px 60px -30px rgba(31, 41, 55, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Feature tags */
+.founder-page .tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(51, 65, 85, 0.15);
+  border-radius: 999px;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.founder-page .card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--stone-ink);
+  transition: transform 0.3s ease;
+}
+
+.founder-page .card:hover {
+  transform: translateY(-4px);
+}
+
+/* Two screenshots stacked: feature grid behind, homepage in front */
+.founder-page .stackshot {
+  position: relative;
+  padding: 0 0 34% 0;
+}
+
+.founder-page .stackshot .shot-back {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 62%;
+  transform: none;
+}
+
+.founder-page .stackshot .shot-front {
+  position: relative;
+  width: 78%;
+  margin-left: auto;
+  transform: none;
+}
+
+/* Hover: the two screenshots trade places */
+.founder-page .stackshot .shot-back,
+.founder-page .stackshot .shot-front {
+  transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1), box-shadow 0.55s ease, filter 0.55s ease;
+}
+
+.founder-page .stackshot .shot-back {
+  z-index: 1;
+}
+
+.founder-page .stackshot .shot-front {
+  z-index: 2;
+}
+
+.founder-page .stackshot:hover .shot-back {
+  transform: translate(36%, -60%) scale(1.26);
   z-index: 3;
+}
+
+.founder-page .stackshot:hover .shot-front {
+  transform: translate(-50%, 62%) scale(0.72);
+  filter: brightness(0.96);
+}
+
+
+
+/* Parthenon on the left, dissolving into the beige, duotoned like the Caryatids */
+.founder-page .stack-photo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 42%;
+  object-fit: cover;
+  object-position: left center;
+  mask-image: linear-gradient(to left, transparent, black 45%);
+  -webkit-mask-image: linear-gradient(to left, transparent, black 45%);
+  filter: grayscale(1) sepia(0.35) contrast(0.95) brightness(1.05);
+  mix-blend-mode: multiply;
+  opacity: 0.9;
 }
 
 /* The photo dissolves into the paper. */
@@ -93,10 +231,6 @@
 }
 
 /* Faint Doric order engraving (Met, CC0) behind the about copy */
-.founder-page .plate {
-  position: relative;
-}
-
 .founder-page .plate::before {
   content: "";
   position: absolute;
@@ -114,6 +248,11 @@
   position: relative;
   overflow: hidden;
   background-color: var(--stonewarm);
+  color: var(--stone-ink);
+}
+
+.founder-page .sage-band {
+  background-color: var(--sage);
   color: var(--stone-ink);
 }
 
@@ -203,6 +342,16 @@
   transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+@media (max-width: 767px) {
+  .founder-page .sky-photo,
+  .founder-page .stack-photo {
+    display: none;
+  }
+  .founder-page .hero {
+    height: 62vh;
+  }
+}
+
 @media (max-width: 640px) {
   .founder-page .timeline li {
     grid-template-columns: 1fr;
@@ -216,8 +365,8 @@
 
 /* Arched portrait, like a niche */
 .founder-page .portrait {
-  width: 300px;
-  height: 400px;
+  width: min(300px, 80vw);
+  height: min(400px, 106vw);
   object-fit: cover;
   object-position: top;
   border-radius: 150px 150px 0 0;
@@ -225,8 +374,15 @@
 }
 
 /* Body copy in EB Garamond (already loaded site-wide) to sit with the Bodoni display. */
-.founder-page p {
-  font-weight: 400;
-  font-size: 1.05rem;
-  line-height: 1.7;
+/* In the base layer so Tailwind text-* utilities can still override it */
+@layer base {
+  .founder-page {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .founder-page p {
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
 }

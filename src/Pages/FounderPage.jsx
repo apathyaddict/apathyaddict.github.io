@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import "../CSS/founder.css";
-import { identity } from "../data/journey";
+import { identity, engineering } from "../data/journey";
+
+const { scale } = engineering;
 
 const stack = [
   "HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Vue", "Angular", "Node", "SQL",
@@ -16,6 +20,12 @@ const journey = [
   { when: "Now", title: "Full-time CTO & co-founder", text: "Running product and engineering, shipping every week, hiring the team around it." },
 ];
 
+const earlier = [
+  { name: "cv-editor", what: "PDF privacy redaction service", stack: "Node · Express · PDF" },
+  { name: "AWS server", what: "Serverless Lambda API", stack: "AWS Lambda · Node · AMA API", url: "https://github.com/apathyaddict/lambdaserverAskB" },
+  { name: "hfo-calc", what: "FHO+ earnings calculator for Ontario physicians", stack: "JavaScript" },
+];
+
 const skills = [
   "Founding & running a company", "Product strategy", "Building a product from zero to market",
   "Pitching & public speaking", "Team building & mentoring", "Hiring", "Teaching", "Writing",
@@ -25,17 +35,27 @@ const skills = [
 const FounderPage = ({ eveImage }) => {
   return (
     <div className="founder-page">
-      <header className="marble hidden md:flex w-3/4 mx-auto mt-4 flex-col">
+      <header className="marble md:hidden px-6 pt-6 pb-2 text-center">
+        <h1 className="text-slate-700 text-2xl font-bold name-div pb-3">Ève Aimée Seni</h1>
+        <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 py-3 font-mono text-[10px] tracking-[0.18em] uppercase text-slate-700">
+          <li><Link to="/" className="navlink">Home</Link></li>
+          <li><a href="#about" className="navlink">Founder</a></li>
+          <li><a href="#milestones" className="navlink">Milestones</a></li>
+          <li><a href="#projects" className="navlink">Projects</a></li>
+          <li><Link to="/art" className="navlink">Art</Link></li>
+        </ul>
+      </header>
+      <header className="marble hidden md:flex w-3/4 mx-auto mt-10 flex-col">
         <div className="name-div py-4">
           <h1 className="text-center text-slate-700 text-3xl font-bold">Ève Aimée Seni</h1>
         </div>
         <nav>
-          <ul className="flex items-center w-3/4 mx-auto justify-around py-4 text-slate-700">
-            <li className="nav-li hover:font-bold"><Link to="/">Home</Link></li>
-            <li className="nav-li hover:font-bold"><a href="#about">Founder</a></li>
-            <li className="nav-li hover:font-bold"><a href="#milestones">Milestones</a></li>
-            <li className="nav-li hover:font-bold"><a href="#stack">Stack</a></li>
-            <li className="nav-li hover:font-bold"><Link to="/art">Art Portfolio</Link></li>
+          <ul className="flex items-center justify-center gap-10 py-4 font-mono text-[11px] tracking-[0.2em] uppercase text-slate-700">
+            <li><Link to="/" className="navlink">Home</Link></li>
+            <li><a href="#about" className="navlink">Founder</a></li>
+            <li><a href="#milestones" className="navlink">Milestones</a></li>
+            <li><a href="#projects" className="navlink">Projects</a></li>
+            <li><Link to="/art" className="navlink">Art Portfolio</Link></li>
           </ul>
         </nav>
       </header>
@@ -52,9 +72,10 @@ const FounderPage = ({ eveImage }) => {
 
       {/* Marble: the founder half slides over the hero with a torn edge */}
       <section id="about" className="over marble torn plate stay">
-        <div className="relative max-w-[1000px] mx-auto px-6 pt-24 pb-28 grid md:grid-cols-[340px_1fr] gap-14 items-center">
+        <div className="relative max-w-[1000px] mx-auto px-6 pt-16 md:pt-24 pb-20 md:pb-28 grid md:grid-cols-[340px_1fr] gap-10 md:gap-14 items-center">
           <img src={eveImage} alt="" className="portrait justify-self-center" />
           <div>
+            <h2 className="didone text-4xl md:text-6xl leading-none mb-6">Ève</h2>
             <p className="mb-3">
               With a passion for art, culture and learning. I have a background in history and
               teaching. My love for the past colors all my creations.
@@ -80,7 +101,7 @@ const FounderPage = ({ eveImage }) => {
       </section>
 
       {/* Journey: Acropolis sky */}
-      <section id="milestones" className="over stone-band">
+      <section id="milestones" className="over stone-band stay">
         <img src="/images/founder/caryatids.jpg" alt="" className="sky-photo" />
         <div className="relative max-w-[1100px] mx-auto px-6 pt-14 pb-16">
           <h2 className="didone text-4xl md:text-6xl leading-none mb-8">Milestones</h2>
@@ -99,14 +120,105 @@ const FounderPage = ({ eveImage }) => {
         </div>
       </section>
 
-      {/* Stack: Parthenon stone */}
-      <section id="stack" className="over marble">
-        <div className="max-w-[1100px] mx-auto px-6 py-20">
-          <p className="text-xs tracking-widest uppercase mb-6 opacity-70">Stack</p>
-          <p className="font-mono text-sm md:text-base leading-loose">{stack.join("  ·  ")}</p>
-          <p className="text-xs tracking-widest uppercase mt-14 mb-6 opacity-70">Skills</p>
-          <p className="font-mono text-sm md:text-base leading-loose">{skills.join("  ·  ")}</p>
+      {/* Projects: LOCVM first, a few earlier pieces after */}
+      <section id="projects" className="over marble">
+        <div className="relative max-w-[1100px] mx-auto px-6 pt-14 pb-28">
+          <h2 className="didone text-4xl md:text-6xl leading-none mb-12">Projects</h2>
+          <div className="grid md:grid-cols-[55%_1fr] gap-12 items-center">
+            <div className="shot stackshot">
+              <img src="/images/founder/locvm-2.jpg" alt="LOCVM features" className="shot-back" />
+              <img src="/images/founder/locvm-3.jpg" alt="LOCVM homepage" className="shot-front" />
+            </div>
+            <div>
+              <p className="font-[Comfortaa] font-bold text-xl tracking-wide mb-2">LOCVM</p>
+              <p className="text-sm mb-4">
+                A healthcare locum marketplace for Canada — designed, built, and run by me since the
+                first commit. One codebase, everything inside:
+              </p>
+              <ul className="flex flex-wrap gap-1.5 mb-6">
+                {[
+                  "Geospatial job search & map",
+                  "Real-time messaging",
+                  "Booking state machine",
+                  "Payments (JetPay, Stripe)",
+                  "CPSO licence verification",
+                  "Job-centric matching engine",
+                  "Digests & notifications",
+                  "Recruiter subscriptions",
+                  "25-page admin suite",
+                  "News CMS & podcast",
+                ].map((f) => (
+                  <li key={f} className="tag">{f}</li>
+                ))}
+              </ul>
+              <dl className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                {[
+                  [`${Math.round(scale.linesOfCode / 1000)}k`, "lines of code"],
+                  [scale.taggedReleases, "releases"],
+                  [scale.unitTests.toLocaleString("en-CA"), "unit tests"],
+                  [scale.components, "components"],
+                ].map(([n, label]) => (
+                  <div key={label}>
+                    <dt className="didone text-2xl leading-none">{n}</dt>
+                    <dd className="text-[11px] opacity-70 mt-1">{label}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="font-mono text-[11px] leading-relaxed opacity-70 mb-5">
+                Next.js · React · Server Actions · MongoDB · Firebase · Stripe · JetPay · Vercel · GitHub Actions · self-hosted runners · Playwright · Jest
+              </p>
+              <a href={identity.links.site} target="_blank" rel="noreferrer" className="font-mono text-xs tracking-widest uppercase hover:underline">
+                locvm.ca →
+              </a>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6 mt-14">
+            {earlier.map((p, i) => {
+              const Tag = p.url ? "a" : "div";
+              const linkProps = p.url ? { href: p.url, target: "_blank", rel: "noreferrer" } : {};
+              return (
+                <Tag key={p.name} {...linkProps} className="card">
+                  <span className="didone text-sm opacity-60">0{i + 1}</span>
+                  <span className="didone text-2xl mt-2">{p.name}</span>
+                  <span className="text-sm mt-1">{p.what}</span>
+                  <span className="font-mono text-[11px] mt-4 opacity-60">{p.stack}</span>
+                </Tag>
+              );
+            })}
+          </div>
         </div>
+      </section>
+
+      {/* Stack: Parthenon stone */}
+      <section id="stack" className="over sage-band">
+        <img src="/images/founder/parthenon.webp" alt="" className="stack-photo" />
+        <div className="relative max-w-[1100px] mx-auto px-6 pt-10 pb-12 grid md:grid-cols-[38%_1fr] gap-10">
+          <div className="hidden md:block" />
+          <div>
+            <h2 className="didone text-4xl md:text-6xl leading-none mb-8">Stack &amp; skills</h2>
+            <p className="text-[11px] tracking-widest uppercase mb-2 opacity-70">Stack</p>
+            <p className="font-mono text-xs leading-relaxed">{stack.join("  ·  ")}</p>
+            <p className="text-[11px] tracking-widest uppercase mt-6 mb-2 opacity-70">Skills</p>
+            <p className="font-mono text-xs leading-relaxed">{skills.join("  ·  ")}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="over marble contact">
+        <div className="max-w-[1100px] mx-auto px-6 pt-10 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 className="didone text-2xl md:text-3xl leading-none mb-2">Let's talk.</h2>
+            <p className="text-xs opacity-70">eve@locvm.ca · English / français</p>
+          </div>
+          <div className="flex gap-5">
+            <a href={identity.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:opacity-60"><FaLinkedin className="h-5 w-5" /></a>
+            <a href="https://github.com/apathyaddict" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:opacity-60"><FaGithub className="h-5 w-5" /></a>
+            <a href="mailto:eve@locvm.ca" aria-label="Email" className="hover:opacity-60"><MdEmail className="h-5 w-5" /></a>
+          </div>
+        </div>
+        <p className="max-w-[1100px] mx-auto px-6 pt-4 pb-4 text-center text-[11px] opacity-60 border-t border-slate-700/15">© 2026 — Designed, coded, and created by Eve Seni</p>
       </section>
     </div>
   );

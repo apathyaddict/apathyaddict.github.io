@@ -27,7 +27,7 @@ const LandingPage = ({ eveImage }) => {
             <div className=" flex justify-between items-center m-4">
               <Link to="/dev">
                 <button className="bg-slate-700 text-white rounded-full px-4 py-2 transition duration-300 ease-in-out  hover:bg-white  hover:text-slate-700 m-4">
-                  Developer
+                  Founder
                 </button>
               </Link>
               <Link to="/art">
