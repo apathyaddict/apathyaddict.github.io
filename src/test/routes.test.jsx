@@ -49,9 +49,24 @@ describe("founder page /dev", () => {
 describe("art pages", () => {
   it("/art renders the portfolio home with carousel and contact", () => {
     renderAt("/art");
-    expect(screen.getByRole("heading", { name: /PORTFOLIO/ })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Portfolio/ })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Raison d'être/ })).toBeInTheDocument();
     expect(screen.getAllByText("Bath Windows").length).toBeGreaterThan(0);
+    expect(screen.getByRole("heading", { name: "Let's talk." })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "See all prints →" })).toHaveAttribute("href", "/art/prints");
+    expect(screen.getByRole("heading", { name: "Prints & watercolours" }).closest("section").querySelectorAll("img")).toHaveLength(8);
+    expect(screen.getByAltText("Alhambra", { exact: false })).toBeInTheDocument();
+    expect(screen.queryByAltText("Yael", { exact: false })).toBeNull();
+    expect(screen.getByRole("link", { name: "Visit the gallery →" })).toHaveAttribute("href", "/art/paintings");
+    expect(screen.getAllByRole("figure")).toHaveLength(3);
+    expect(screen.getByRole("link", { name: "Email" })).toHaveAttribute("href", "mailto:eve@locvm.ca");
+    expect(screen.queryByText(/@/)).toBeNull();
+  });
+
+  it("art nav links to the founder page and the other art pages", () => {
+    renderAt("/art/prints");
+    expect(screen.getAllByRole("link", { name: "Coding" })[0]).toHaveAttribute("href", "/dev");
+    expect(screen.getAllByRole("link", { name: "Paintings" })[0]).toHaveAttribute("href", "/art/paintings");
   });
 
   it("/art/prints renders every watercolour", () => {

@@ -1,99 +1,60 @@
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import "../CSS/founder.css";
+import "../CSS/art.css";
+
+const links = [
+  { to: "/", label: "Home", end: true },
+  { to: "/art", label: "Portfolio", end: true },
+  { to: "/art/prints", label: "Prints & Watercolours" },
+  { to: "/art/paintings", label: "Paintings" },
+];
 
 const NavBarArt = ({ scrollToSection, contactPage }) => {
-  const [navDev, setNavDev] = useState(false);
-  const handleClick = () => setNavDev(!navDev);
-  const handleLinkClick = () => setNavDev(false);
+  const items = (
+    <>
+      {links.map((l) => (
+        <li key={l.to}>
+          <NavLink
+            to={l.to}
+            end={l.end}
+            className={({ isActive }) => `navlink ${isActive ? "is-active" : ""}`}
+          >
+            {l.label}
+          </NavLink>
+        </li>
+      ))}
+      <li>
+        <Link to="/art" onClick={() => scrollToSection(contactPage)} className="navlink">
+          Contact
+        </Link>
+      </li>
+      <li>
+        <Link to="/dev" className="navlink">
+          Coding
+        </Link>
+      </li>
+    </>
+  );
 
   return (
-    <>
-      <section>
-        <div className="flex-1 w-3/4 p-1 mx-auto mt-4 ">
-          <div
-            className={`name-div py-4 ${navDev ? "border-b-0" : "border-b-2"}`}
-          >
-            <h1 className="text-center text-slate-700 text-3xl font-bold">
-              Ève Aimée Seni
-            </h1>
-          </div>
+    <div className="founder-page">
+      <header className="marble md:hidden px-6 pt-4 pb-1 text-center">
+        <h1 className="didone text-slate-700 text-xl name-div pb-2">Ève Aimée Seni</h1>
+        <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 py-2 font-mono text-[10px] tracking-[0.18em] uppercase text-slate-700">
+          {items}
+        </ul>
+      </header>
+      <header className="marble hidden md:flex w-3/4 mx-auto mt-10 flex-col">
+        <div className="name-div py-4">
+          <h1 className="didone text-center text-slate-700 text-3xl">Ève Aimée Seni</h1>
         </div>
-        {/* Hamburger */}
-        <div
-          onClick={handleClick}
-          className="lg:hidden z-10 absolute top-4 right-4 text-slate-700"
-        >
-          {!navDev ? <FaBars size={24} /> : <FaTimes size={24} />}
-        </div>
-
-        {/* MOBILE MENU */}
-        {navDev && (
-          <ul className="lg:hidden absolute top-0 right-0 h-screen w-full flex flex-col justify-center items-center bg-beige text-slate-700 ">
-            <Link
-              to="/art"
-              onClick={handleLinkClick}
-              className="hover:font-bold py-6 text-4xl"
-            >
-              Home
-            </Link>
-
-            <Link
-              to="/art/prints"
-              onClick={handleLinkClick}
-              className="hover:font-bold py-6 text-4xl "
-            >
-              Watercolours
-            </Link>
-            <Link
-              to="/art/paintings"
-              onClick={handleLinkClick}
-              className="hover:font-bold py-6 text-4xl"
-            >
-              Paintings
-            </Link>
-            <Link
-              to="/art"
-              onClick={() => scrollToSection(contactPage)}
-              className="hover:font-bold py-6 text-4xl"
-            >
-              Contact
-            </Link>
-            <Link to="/dev" className="hover:font-bold py-6 text-4xl">
-              Coding
-            </Link>
+        <nav>
+          <ul className="flex items-center justify-center gap-10 py-4 font-mono text-[11px] tracking-[0.2em] uppercase text-slate-700">
+            {items}
           </ul>
-        )}
-
-        <nav className="hidden lg:flex w-3/4 mx-auto justify-around py-4 text-slate-700 menuart">
-          <NavLink to="/art" className="hover:font-bold">
-            <h2> Home</h2>
-          </NavLink>
-
-          <NavLink to="/art/prints" className="hover:font-bold">
-            {({ isActive }) => (
-              <h2 className={isActive ? " font-bold" : ""}>
-                {" "}
-                Prints and Watercolours
-              </h2>
-            )}
-          </NavLink>
-
-          <NavLink to="/art/paintings" className="hover:font-bold">
-            {({ isActive }) => (
-              <h2 className={isActive ? " font-bold" : ""}> Paintings</h2>
-            )}
-          </NavLink>
-          <Link to="/art" className="hover:font-bold">
-            <h2>Contact</h2>
-          </Link>
-
-          <Link to="/dev" className="hover:font-bold">
-            <h2>Coding</h2>
-          </Link>
         </nav>
-      </section>
-    </>
+      </header>
+    </div>
   );
 };
 
